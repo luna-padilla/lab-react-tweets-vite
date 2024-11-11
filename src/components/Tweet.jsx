@@ -2,6 +2,7 @@ import ProfileImage from "./ProfileImage";
 import User from "./User";
 import Timestamp from "./Timestamp";
 import Message from "./Message";
+import Actions from "./Actions";
 function Tweet({ tweet }) {
   console.log();
   return (
@@ -11,17 +12,10 @@ function Tweet({ tweet }) {
       <div className="body">
         <div className="top">
           <User userName={tweet.user.name} UserHandle={tweet.user.handle} />
-          <Timestamp  timestamp={tweet.timestamp} />
+          <Timestamp timestamp={tweet.timestamp} />
         </div>
-        <Message  message={tweet.message} />
-
-        <div className="actions">
-          {/* Font Awesome icons */}
-          <i className="far fa-comment" data-testid="comment-icon"></i>
-          <i className="fas fa-retweet" data-testid="retweet-icon"></i>
-          <i className="far fa-heart" data-testid="heart-icon"></i>
-          <i className="fas fa-share" data-testid="share-icon"></i>
-        </div>
+        <Message message={tweet.message} />
+        <Actions />
       </div>
 
       <i className="fas fa-ellipsis-h"></i>
